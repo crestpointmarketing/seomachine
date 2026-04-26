@@ -50,12 +50,15 @@ tmp/
 topics/*
 !topics/.gitkeep
 !topics/example-topic-idea.md
+!topics/queue.md
 
 research/*
 !research/.gitkeep
+!research/*.md
 
 drafts/*
 !drafts/.gitkeep
+!drafts/*.md
 
 published/*
 !published/.gitkeep

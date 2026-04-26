@@ -1,0 +1,87 @@
+name: Auto Content Generation
+
+on:
+  schedule:
+    - cron: '0 9 * * 1,3,5'  # Mon/Wed/Fri 9am UTC
+  workflow_dispatch:           # Allow manual trigger from GitHub UI
+
+jobs:
+  generate-article:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install Claude Code CLI
+        run: npm install -g @anthropic-ai/claude-code
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install Python dependencies
+        run: pip install -r data_sources/requirements.txt
+
+      - name: Check for pending topics
+        id: check_topics
+        run: |
+          if grep -q "^- \[ \]" topics/queue.md; then
+            echo "has_topics=true" >> $GITHUB_OUTPUT
+            TOPIC=$(grep "^- \[ \]" topics/queue.md | head -1 | sed 's/^- \[ \] //')
+            echo "topic=$TOPIC" >> $GITHUB_OUTPUT
+            echo "Found topic: $TOPIC"
+          else
+            echo "has_topics=false" >> $GITHUB_OUTPUT
+            echo "No pending topics in queue.md"
+          fi
+
+      - name: Generate article
+        if: steps.check_topics.outputs.has_topics == 'true'
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: |
+          TOPIC="${{ steps.check_topics.outputs.topic }}"
+          echo "Generating article for: $TOPIC"
+          claude --print "
+            You are running an automated content generation task for OneSource Cloud.
+
+            Topic to write about: $TOPIC
+
+            Steps:
+            1. Run /research for this topic
+            2. Run /write for this topic
+            3. Save the draft to drafts/ directory
+            4. Do NOT publish to Webflow - save draft only
+
+            Follow all brand guidelines in context/ files.
+          "
+
+      - name: Update topics queue
+        if: steps.check_topics.outputs.has_topics == 'true'
+        run: |
+          TOPIC="${{ steps.check_topics.outputs.topic }}"
+          TODAY=$(date +%Y-%m-%d)
+          # Mark topic as done with date
+          sed -i "s/^- \[ \] $(echo "$TOPIC" | sed 's/[[\.*^$()+?{|]/\\&/g')/- [x] $TOPIC ($TODAY)/" topics/queue.md
+
+      - name: Commit generated content
+        if: steps.check_topics.outputs.has_topics == 'true'
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add drafts/ research/ topics/queue.md
+          git diff --staged --quiet || git commit -m "auto: generate article for '${{ steps.check_topics.outputs.topic }}' ($(date +%Y-%m-%d))"
+          git push
+
+      - name: No topics available
+        if: steps.check_topics.outputs.has_topics == 'false'
+        run: echo "Queue is empty. Add more topics to topics/queue.md"
