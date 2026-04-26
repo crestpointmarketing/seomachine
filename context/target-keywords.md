@@ -1,375 +1,241 @@
-# Target Keywords & Topic Clusters
+# OneSource Cloud – Target Keywords & Topic Clusters
 
-This document organizes Castos's target keywords by topic cluster for strategic content planning and SEO optimization.
-
-## Instructions
-Fill in this template with your target keywords organized by topic cluster. Update regularly based on keyword research and content performance.
+This document organizes OneSource Cloud’s target keywords by topic cluster for SEO strategy, content planning, and conversion alignment.
 
 ---
 
 ## Topic Cluster Structure
 
-Each topic cluster should have:
-- **Pillar Keyword**: Main, high-volume keyword (typically competitive)
-- **Cluster Keywords**: 5-10 related keywords (subtopics)
-- **Long-Tail Keywords**: 10-15 specific, lower-volume phrases
-- **Search Intent**: What users want (informational, commercial, transactional)
+Each cluster includes:
+
+- **Pillar Keyword** (core traffic driver)  
+- **Cluster Keywords** (subtopics)  
+- **Long-Tail Keywords** (conversion-focused queries)  
+- **Search Intent** (user intent)  
 
 ---
 
-## Cluster 1: Podcast Hosting
+## Cluster 1: Private AI Infrastructure
 
 ### Pillar Keyword
-- **Keyword**: podcast hosting
-- **Search Volume**: [monthly searches]
-- **Difficulty**: [competition level]
-- **Intent**: Commercial
-- **Current Ranking**: [position if known]
-- **Pillar Content URL**: [URL of main guide]
-
-### Cluster Keywords (Subtopics)
-1. **best podcast hosting**
-   - Volume: [searches]
-   - Difficulty: [level]
-   - Content: [URL if exists, or "Not yet created"]
-
-2. **podcast hosting platform**
-   - Volume: [searches]
-   - Difficulty: [level]
-   - Content: [URL or status]
-
-3. **podcast hosting comparison**
-   - Volume: [searches]
-   - Difficulty: [level]
-   - Content: [URL or status]
-
-4. **free podcast hosting**
-   - Volume: [searches]
-   - Difficulty: [level]
-   - Content: [URL or status]
-
-5. **podcast hosting pricing**
-   - Volume: [searches]
-   - Difficulty: [level]
-   - Content: [URL or status]
-
-[Add 5-10 cluster keywords total]
-
-### Long-Tail Keywords
-- how to choose a podcast host
-- podcast hosting for beginners
-- podcast hosting with unlimited bandwidth
-- podcast hosting that includes a website
-- difference between podcast hosting and website hosting
-- what to look for in a podcast host
-- podcast hosting for multiple shows
-- [Add 10-15 long-tail variations]
-
-### Related Questions (People Also Ask)
-- What is podcast hosting?
-- Do I need podcast hosting?
-- How much does podcast hosting cost?
-- Can I host my podcast for free?
-- [Add questions from PAA boxes]
-
----
-
-## Cluster 2: Podcast Analytics
-
-### Pillar Keyword
-- **Keyword**: podcast analytics
-- **Search Volume**: [monthly searches]
-- **Difficulty**: [competition level]
-- **Intent**: Informational
-- **Current Ranking**: [position if known]
-- **Pillar Content URL**: [URL or "To create"]
-
-### Cluster Keywords (Subtopics)
-1. **podcast metrics**
-2. **podcast download statistics**
-3. **podcast listener data**
-4. **podcast performance tracking**
-5. **podcast growth metrics**
-[Continue with 5-10 cluster keywords]
-
-### Long-Tail Keywords
-- how to track podcast analytics
-- understanding podcast download numbers
-- most important podcast metrics
-- how to measure podcast success
-- podcast analytics tools
-[Add 10-15 long-tail variations]
-
-### Related Questions
-[Add PAA questions]
-
----
-
-## Cluster 3: Podcast Growth
-
-### Pillar Keyword
-- **Keyword**: grow podcast audience
-- **Search Volume**: [monthly searches]
-- **Difficulty**: [competition level]
-- **Intent**: Informational
-- **Current Ranking**: [position]
-- **Pillar Content URL**: [URL or status]
+- **Keyword**: private AI infrastructure  
+- **Intent**: Commercial  
+- **Pillar Page**: /private-ai-infrastructure  
 
 ### Cluster Keywords
-1. **podcast growth strategies**
-2. **increase podcast downloads**
-3. **podcast marketing**
-4. **podcast promotion**
-5. **podcast audience development**
-[Continue with cluster keywords]
+- enterprise AI infrastructure  
+- dedicated AI infrastructure  
+- AI infrastructure platform  
+- private GPU cloud  
+- on-prem AI infrastructure  
+- AI cluster deployment  
+- AI infrastructure architecture  
 
 ### Long-Tail Keywords
-- how to get more podcast listeners
-- promote your podcast free
-- grow podcast audience fast
-- podcast growth tips for beginners
-[Add long-tail variations]
+- what is private AI infrastructure  
+- private AI vs public cloud  
+- benefits of private AI infrastructure  
+- enterprise AI deployment architecture  
+- AI infrastructure for large companies  
+- private GPU cluster setup  
+- AI infrastructure cost comparison  
 
 ### Related Questions
-[Add PAA questions]
+- What is private AI infrastructure?  
+- Why do enterprises need private AI?  
+- Is private AI better than public cloud?  
 
 ---
 
-## Cluster 4: Podcast Monetization
+## Cluster 2: Managed AI Infrastructure
 
 ### Pillar Keyword
-- **Keyword**: podcast monetization
-- **Search Volume**: [monthly searches]
-- **Difficulty**: [competition level]
-- **Intent**: Commercial/Informational
-- **Current Ranking**: [position]
-- **Pillar Content URL**: [URL or status]
+- **Keyword**: managed AI infrastructure  
+- **Intent**: Commercial  
+- **Pillar Page**: /managed-ai-infrastructure  
 
 ### Cluster Keywords
-1. **how to monetize a podcast**
-2. **podcast advertising**
-3. **podcast sponsorships**
-4. **make money podcasting**
-5. **podcast revenue streams**
-[Continue]
+- AI infrastructure managed services  
+- AI operations platform  
+- AI infrastructure support  
+- GPU infrastructure management  
+- AI DevOps infrastructure  
 
 ### Long-Tail Keywords
-[Add 10-15 variations]
+- fully managed AI infrastructure  
+- AI infrastructure outsourcing  
+- AI operations management platform  
+- managed GPU clusters  
+- AI infrastructure maintenance  
 
 ### Related Questions
-[Add PAA questions]
+- What is managed AI infrastructure?  
+- Should we manage AI in-house?  
 
 ---
 
-## Cluster 5: Starting a Podcast
+## Cluster 3: AI Infrastructure for Healthcare
 
 ### Pillar Keyword
-- **Keyword**: how to start a podcast
-- **Search Volume**: [monthly searches]
-- **Difficulty**: [competition level]
-- **Intent**: Informational
-- **Current Ranking**: [position]
-- **Pillar Content URL**: [URL or status]
+- **Keyword**: AI infrastructure for healthcare  
+- **Intent**: Commercial  
+- **Pillar Page**: /ai-for-healthcare  
 
 ### Cluster Keywords
-1. **podcast equipment**
-2. **podcast recording software**
-3. **podcast editing**
-4. **podcast launch checklist**
-5. **podcast setup**
-[Continue]
+- HIPAA compliant AI infrastructure  
+- healthcare AI platform  
+- medical AI infrastructure  
+- secure AI for healthcare  
 
 ### Long-Tail Keywords
-[Add variations]
+- HIPAA compliant AI infrastructure  
+- private AI for healthcare  
+- secure AI infrastructure for hospitals  
+- AI compliance healthcare systems  
+- patient data AI infrastructure  
 
 ### Related Questions
-[Add PAA questions]
+- Can AI be HIPAA compliant?  
+- How to secure healthcare AI systems?  
 
 ---
 
-## Cluster 6: [Additional Cluster]
+## Cluster 4: GPU Cluster & AI Architecture
 
-[Follow same format for:]
-- Podcast SEO
-- Podcast Distribution
-- Podcast Equipment
-- Podcast Editing
-- Podcast Formats
-- Private Podcasting
-- Podcast for Business
-- etc.
+### Pillar Keyword
+- **Keyword**: GPU cluster architecture  
+- **Intent**: Informational / Commercial  
+- **Pillar Page**: /high-performance-ai-networking  
 
----
+### Cluster Keywords
+- AI cluster architecture  
+- GPU infrastructure design  
+- distributed AI systems  
+- AI networking infrastructure  
+- InfiniBand AI clusters  
 
-## Seasonal/Trending Keywords
+### Long-Tail Keywords
+- how to build GPU clusters for AI  
+- AI cluster networking best practices  
+- GPU scaling architecture  
+- high-performance AI networking  
+- AI infrastructure design patterns  
 
-### Q1 Keywords (Jan-Mar)
-- New year podcast goals
-- Podcast trends 2025
-- [Add seasonal opportunities]
-
-### Q2 Keywords (Apr-Jun)
-[Add seasonal keywords]
-
-### Q3 Keywords (Jul-Sep)
-[Add seasonal keywords]
-
-### Q4 Keywords (Oct-Dec)
-[Add seasonal keywords]
+### Related Questions
+- What is a GPU cluster?  
+- How does AI scaling work?  
 
 ---
 
-## Competitor Keyword Gaps
+## Cluster 5: AI Cost & Cloud Comparison
 
-Track keywords where competitors rank but Castos doesn't:
+### Pillar Keyword
+- **Keyword**: AI infrastructure cost  
+- **Intent**: Commercial  
+- **Pillar Page**: Blog → link to /private-ai-infrastructure  
 
-### Competitor: [Name]
-- **Keyword**: [keyword they rank for]
-  - Their Position: [rank]
-  - Castos Position: [rank or "Not ranking"]
-  - Opportunity: [High/Medium/Low]
-  - Action: [Create content, optimize existing, etc.]
+### Cluster Keywords
+- AI cost optimization  
+- GPU cloud pricing  
+- AI infrastructure cost comparison  
+- cloud vs private AI  
 
-[Add more competitors and gaps]
+### Long-Tail Keywords
+- cost of running LLM at scale  
+- AI vs cloud pricing comparison  
+- GPU cost optimization  
+- AI infrastructure ROI  
+- inference cost breakdown  
+
+### Related Questions
+- How much does AI infrastructure cost?  
+- Is private AI cheaper than cloud?  
+
+---
+
+## Cluster 6: AI Infrastructure Platform (OnePlus)
+
+### Pillar Keyword
+- **Keyword**: AI infrastructure platform  
+- **Intent**: Commercial  
+- **Pillar Page**: /ai-infrastructure-platform  
+
+### Cluster Keywords
+- AI orchestration platform  
+- GPU scheduling platform  
+- AI workload management  
+- multi-tenant AI platform  
+
+### Long-Tail Keywords
+- AI orchestration tools  
+- GPU scheduling system  
+- Kubernetes AI workloads  
+- Slurm AI scheduling  
+- AI infrastructure control plane  
+
+### Related Questions
+- What is AI orchestration?  
+- How to manage GPU workloads?  
 
 ---
 
 ## Keyword Opportunity Pipeline
 
-### High Priority (Create Soon)
-Keywords with high volume, achievable difficulty, strong business value:
+### High Priority
+- private AI infrastructure  
+- AI infrastructure for healthcare  
+- private AI vs public cloud  
+- AI infrastructure cost  
+- GPU cluster architecture  
 
-1. **Keyword**: [keyword]
-   - Volume: [searches]
-   - Difficulty: [score]
-   - Intent: [type]
-   - Why Priority: [strategic reason]
-   - Action: [Create pillar content / cluster article / etc.]
+### Medium Priority
+- AI networking  
+- AI storage architecture  
+- AI deployment architecture  
 
-[List 5-10 high-priority keywords]
-
-### Medium Priority (Next Quarter)
-[List keywords to target in next 3 months]
-
-### Low Priority (Future Consideration)
-[List keywords for future content planning]
-
----
-
-## Keyword Tracking & Performance
-
-### Top Performing Keywords
-Keywords where Castos ranks in positions 1-10:
-
-1. **Keyword**: [keyword]
-   - Position: [current rank]
-   - Volume: [searches]
-   - URL: [ranking page]
-   - Trend: [↑ Rising / → Stable / ↓ Declining]
-
-[List current winners]
-
-### Keywords to Improve
-Keywords ranking 11-20 (page 2) with opportunity:
-
-1. **Keyword**: [keyword]
-   - Position: [current rank]
-   - Volume: [searches]
-   - URL: [ranking page]
-   - Action Needed: [Update content, build links, etc.]
-
-[List improvement opportunities]
-
----
-
-## Keyword Cannibalization Check
-
-Track multiple pages targeting same/similar keywords:
-
-### Potential Cannibalization Issues
-
-**Keyword**: [keyword]
-- Page 1: [URL] - Position [rank]
-- Page 2: [URL] - Position [rank]
-- **Issue**: Both pages competing for same keyword
-- **Solution**: [Consolidate, differentiate, redirect, etc.]
-
-[Monitor and document conflicts]
+### Low Priority
+- general AI concepts  
+- beginner AI topics  
 
 ---
 
 ## LSI & Semantic Keywords
 
-Common related terms to include across podcasting content:
+### AI Infrastructure Terms
+- GPU cluster  
+- AI compute  
+- AI storage  
+- AI networking  
+- orchestration  
+- distributed AI  
 
-### Podcast Industry Terms
-- RSS feed
-- podcast directory
-- podcast app
-- podcast player
-- episode
-- show notes
-- audio content
-- podcast network
-[Add more]
-
-### Podcast Creation Terms
-- recording
-- editing
-- post-production
-- audio quality
-- microphone
-- podcast equipment
-[Add more]
-
-### Podcast Growth Terms
-- downloads
-- listeners
-- audience
-- subscribers
-- engagement
-- retention
-[Add more]
+### Enterprise Terms
+- compliance  
+- data governance  
+- security  
+- scalability  
+- reliability  
 
 ---
 
 ## Usage Guidelines
 
-### When Writing New Content
-1. Check which cluster the topic belongs to
-2. Target the appropriate cluster or long-tail keyword
-3. Reference pillar content in that cluster
-4. Include LSI keywords naturally
-5. Link to related cluster articles
-
-### When Optimizing Existing Content
-1. Verify content targets the right keyword
-2. Check for cannibalization with other pages
-3. Ensure keyword appears in critical locations
-4. Update if search intent has shifted
-5. Add internal links to/from related cluster content
-
-### When Planning Content Calendar
-1. Review keyword opportunity pipeline
-2. Prioritize high-value, achievable keywords
-3. Build out topic clusters systematically
-4. Balance pillar content with cluster articles
-5. Track keyword performance over time
+### When Writing Content
+1. Choose the correct cluster  
+2. Target a primary keyword  
+3. Link to the pillar page  
+4. Include related keywords  
+5. Add internal links  
 
 ---
 
-## Maintenance
+## Principle
 
-**Last Updated**: [Date]
-**Next Review**: [Date - quarterly recommended]
+Own the category:
 
-**Regular Updates**:
-- Add new keyword opportunities monthly
-- Track ranking changes monthly
-- Update volumes/difficulty quarterly
-- Review competitor gaps quarterly
-- Refine clusters based on performance
+Private AI Infrastructure
 
----
-
-**Note**: This is a living document. As you conduct keyword research, track performance, and identify new opportunities, update this file to keep your SEO strategy aligned with your content creation.
+Drive all content toward:
+- Control  
+- Compliance  
+- Predictable Performance  
