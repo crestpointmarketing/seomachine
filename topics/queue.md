@@ -8,7 +8,7 @@ Articles are picked in order from Pending. Move to Done after draft is saved.
 
 - [x] Private AI vs public cloud: total cost of ownership comparison (2026-04-27)
 - [x] GPU cluster architecture for enterprise AI workloads (2026-04-27)
-- [ ] Managed AI infrastructure: what to look for in a provider
+- [x] Managed AI infrastructure: what to look for in a provider (2026-04-27)
 - [ ] How to scale AI infrastructure without rebuilding from scratch
 - [ ] AI storage architecture for large language models
 - [ ] InfiniBand vs Ethernet for AI cluster networking
