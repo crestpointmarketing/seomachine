@@ -65,12 +65,17 @@ jobs:
 
             Follow all brand guidelines in context/ files."
 
+      - name: Publish draft to Webflow
+        if: steps.check_topics.outputs.has_topics == 'true'
+        env:
+          WEBFLOW_API_TOKEN: ${{ secrets.WEBFLOW_API_TOKEN }}
+        run: python scripts/publish_to_webflow.py
+
       - name: Update topics queue
         if: steps.check_topics.outputs.has_topics == 'true'
         run: |
           TOPIC="${{ steps.check_topics.outputs.topic }}"
           TODAY=$(date +%Y-%m-%d)
-          # Mark topic as done with date
           sed -i "s/^- \[ \] $(echo "$TOPIC" | sed 's/[[\.*^$()+?{|]/\\&/g')/- [x] $TOPIC ($TODAY)/" topics/queue.md
 
       - name: Commit generated content
