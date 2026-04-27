@@ -51,8 +51,9 @@ jobs:
         run: |
           TOPIC="${{ steps.check_topics.outputs.topic }}"
           echo "Generating article for: $TOPIC"
-          claude --print "
-            You are running an automated content generation task for OneSource Cloud.
+          claude -p \
+            --dangerously-skip-permissions \
+            "You are running an automated content generation task for OneSource Cloud.
 
             Topic to write about: $TOPIC
 
@@ -62,8 +63,7 @@ jobs:
             3. Save the draft to drafts/ directory
             4. Do NOT publish to Webflow - save draft only
 
-            Follow all brand guidelines in context/ files.
-          "
+            Follow all brand guidelines in context/ files."
 
       - name: Update topics queue
         if: steps.check_topics.outputs.has_topics == 'true'
