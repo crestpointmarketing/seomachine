@@ -1,107 +1,74 @@
 # Research Brief: Managed AI Infrastructure — What to Look for in a Provider
-
-**Date**: 2026-04-27  
-**Topic**: Managed AI infrastructure: what to look for in a provider  
-**Cluster**: Cluster 2 — Managed AI Infrastructure  
+**Date**: 2026-04-27
+**Cluster**: Managed AI Infrastructure (Cluster 2)
+**Primary Keyword**: managed AI infrastructure
 
 ---
 
 ## 1. SEO Foundation
 
-- **Primary Keyword**: managed AI infrastructure provider (commercial intent)
-- **Secondary Keywords**:
-  - fully managed AI infrastructure
-  - AI infrastructure managed services
-  - GPU infrastructure management
-  - AI operations platform
-  - managed GPU clusters
-  - AI infrastructure outsourcing
-- **Target Word Count**: 2,200–2,800 words
-- **Search Intent**: Commercial — buyers researching providers before making infrastructure decisions
-- **Featured Snippet Opportunity**: Yes — list format for "what to look for in a managed AI infrastructure provider"
+**Primary Keyword**: `managed AI infrastructure`
+- Volume: 500–1,000/mo | Difficulty: Medium (45–55) | Intent: Commercial
+
+**Secondary Keywords**:
+1. fully managed AI infrastructure
+2. AI infrastructure managed services
+3. managed GPU clusters
+4. AI infrastructure outsourcing
+5. AI operations management platform
+
+**LSI**: SLA, uptime, GPU cluster management, AI DevOps, lifecycle management, inference operations, model deployment, GPU utilization
+
+**Target Word Count**: 2,500–3,000
+**Featured Snippet**: Yes — evaluation checklist (list format) + definition paragraph
 
 ---
 
-## 2. Competitive Landscape
+## 2. Content Gaps
 
-### Common Sections Across Top SERP Results
-- Definition of managed AI infrastructure
-- Comparison with self-managed / DIY infrastructure
-- Checklist of evaluation criteria (security, performance, compliance, cost)
-- Questions to ask providers
-- Total cost of ownership framing
-
-### Content Gaps to Exploit
-- Most competitor content is generic cloud/SaaS framing — does not address **dedicated GPU environments** or **data sovereignty**
-- Little coverage of **lifecycle management** (build → operate → scale)
-- Compliance requirements (HIPAA, SOC 2, FedRAMP) are mentioned but not explained with depth
-- Pricing predictability is rarely covered in detail
-- Red flags / anti-patterns are largely absent
-
-### Differentiation Strategy
-Position OneSource Cloud as the **private AI infrastructure specialist** — not just another managed cloud. Emphasize dedicated resources, full data control, and lifecycle ownership that generic cloud providers cannot offer.
+1. Concrete vendor evaluation framework (scorecard/checklist)
+2. Build vs. buy decision criteria with real cost thresholds
+3. SLA requirements specific to AI workloads (not generic IT)
+4. Hidden costs in managed AI (egress, support tiers, overprovisioning)
+5. How managed differs from co-location or cloud in practice
+6. What "fully managed" actually includes vs. excludes
 
 ---
 
 ## 3. Recommended Outline
 
-```
-H1: Managed AI Infrastructure: What to Look for in a Provider
+H1: Managed AI Infrastructure: What to Look for in a Provider (2026 Guide)
 
-Introduction
-- Hook: most AI projects fail not because of the model — but the infrastructure
-- Problem: enterprise AI demands dedicated resources, compliance, and operational continuity
-- Value proposition: the right managed provider removes infrastructure risk entirely
-
-H2: What Is Managed AI Infrastructure?
-H3: Managed vs. Self-Managed: The Core Difference
-H3: What "Fully Managed" Should Actually Include
-
-H2: Why Your Choice of Provider Matters More Than You Think
-H3: The Hidden Costs of the Wrong Provider
-H3: Infrastructure Lock-In Risks
-
-H2: 8 Criteria for Evaluating a Managed AI Infrastructure Provider
-H3: 1. Dedicated vs. Shared Resources
-H3: 2. Performance Guarantees and SLAs
-H3: 3. Security Architecture and Data Sovereignty
-H3: 4. Compliance Coverage
-H3: 5. Networking and Storage Capabilities
-H3: 6. Scalability and Lifecycle Management
-H3: 7. Operational Monitoring and Support
-H3: 8. Predictable, Transparent Pricing
-
-H2: Red Flags to Watch For
-H2: Questions to Ask Before You Sign
-H2: How OneSource Cloud Approaches Managed AI Infrastructure
-
-Conclusion + CTA
-```
+- What managed AI infrastructure actually means
+- Build vs. managed in-house: when each makes sense
+- 8 criteria for evaluating managed AI infrastructure providers
+- SLA requirements specific to AI workloads
+- Hidden costs to watch for
+- How to run a provider evaluation (RFP checklist)
+- FAQ (5 questions)
+- Conclusion + CTA
 
 ---
 
-## 4. Supporting Data Points
+## 4. Internal Links
 
-- Gartner: 70% of AI projects fail to reach production — infrastructure is a leading cause
-- IDC: enterprise AI infrastructure spending to reach $300B+ by 2026
-- McKinsey: companies with dedicated AI infrastructure report 2.5x faster model deployment
-- HIPAA Journal: 60%+ of healthcare organizations cite compliance as the #1 AI adoption barrier
-- Flexera: cloud cost overruns affect 82% of enterprises running AI workloads on shared infrastructure
-
----
-
-## 5. Internal Linking Strategy
-
-| Placement | Anchor Text | URL |
-|-----------|-------------|-----|
-| First 2 paragraphs | "private AI infrastructure" | https://onesourcecloud.net/private-ai-infrastructure |
-| Mid-content (networking section) | "high-performance AI networking" | https://onesourcecloud.net/high-performance-ai-networking |
-| Near CTA | "AI infrastructure for healthcare" | https://onesourcecloud.net/ai-for-healthcare |
+- https://onesourcecloud.net/private-ai-infrastructure (first 2 paragraphs)
+- https://onesourcecloud.net/managed-ai-infrastructure (mid-article, provider section)
+- https://onesourcecloud.net/high-performance-ai-networking (SLA/networking section)
+- https://onesourcecloud.net/ai-for-healthcare (industry use case mention)
 
 ---
 
-## 6. Meta Elements Preview
+## 5. External Links
 
-- **Meta Title**: Managed AI Infrastructure: What to Look for in a Provider (58 chars)
-- **Meta Description**: Evaluating managed AI infrastructure providers? Here are the 8 criteria that separate capable partners from costly mistakes. (155 chars)
-- **URL Slug**: `/blog/managed-ai-infrastructure-what-to-look-for-in-a-provider`
+- NIST SP 800-53 (security controls): https://csrc.nist.gov/publications/detail/sp/800-53/rev-5/final
+- Uptime Institute (data center tiers): https://uptimeinstitute.com/tiers
+- MLOps Community (AI operations standards): as reference for AI-specific SLAs
+
+---
+
+## 6. Meta Elements
+
+**Title**: Managed AI Infrastructure: What to Look for in a Provider (57 chars)
+**Description**: Evaluating managed AI infrastructure providers? Here are the 8 criteria that separate serious partners from generic hosting — with an RFP checklist. (155 chars)
+**Slug**: /blog/managed-ai-infrastructure-provider
