@@ -10,7 +10,7 @@ Articles are picked in order from Pending. Move to Done after draft is saved.
 - [x] GPU cluster architecture for enterprise AI workloads (2026-04-27)
 - [x] Managed AI infrastructure: what to look for in a provider (2026-04-27)
 - [x] How to scale AI infrastructure without rebuilding from scratch (2026-04-29)
-- [ ] AI storage architecture for large language models
+- [x] AI storage architecture for large language models (2026-05-01)
 - [ ] InfiniBand vs Ethernet for AI cluster networking
 - [ ] On-premises AI infrastructure vs colocation: which is right for you
 - [ ] How to run HIPAA compliant AI in a hospital system
