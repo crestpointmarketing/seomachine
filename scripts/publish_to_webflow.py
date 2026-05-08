@@ -54,9 +54,22 @@ def parse_frontmatter(content):
             for line in content[3:end].strip().splitlines():
                 if ":" in line:
                     key, _, val = line.partition(":")
-                    meta[key.strip()] = val.strip().strip('"')
+                    # Store both original and lowercase keys for flexible lookup
+                    k = key.strip()
+                    v = val.strip().strip('"')
+                    meta[k] = v
+                    meta[k.lower()] = v
+                    meta[k.lower().replace(" ", "_")] = v
             content = content[end + 3:].strip()
     return meta, content
+
+
+def extract_first_image(body):
+    """Extract first image URL and alt text from markdown body."""
+    match = re.search(r'!\[([^\]]*)\]\((https?://[^\)]+)\)', body)
+    if match:
+        return {"url": match.group(2), "alt": match.group(1)}
+    return None
 
 
 def md_to_html(body):
@@ -65,7 +78,7 @@ def md_to_html(body):
         if idx != -1:
             body = body[:idx]
 
-    # Remove the table of contents block (lines starting with - [)
+    # Remove the table of contents block
     body = re.sub(r"\n\*\*In this guide:\*\*\n(- \[.*?\]\(.*?\)\n)+", "\n", body)
 
     return md_lib.markdown(
@@ -80,7 +93,7 @@ def estimate_read_time(body):
     return f"{minutes} min read"
 
 
-def publish_to_webflow(title, slug, description, author, html_content, read_time):
+def publish_to_webflow(title, slug, description, author, html_content, read_time, thumbnail=None):
     if not WEBFLOW_API_TOKEN:
         print("Error: WEBFLOW_API_TOKEN is not set.")
         sys.exit(1)
@@ -94,19 +107,27 @@ def publish_to_webflow(title, slug, description, author, html_content, read_time
     # Clean slug: remove /blog/ prefix if present
     clean_slug = slug.lstrip("/").removeprefix("blog/")
 
+    field_data = {
+        "name": title,
+        "slug": clean_slug,
+        "description": description,
+        "author": author or "OneSource Cloud",
+        "read-time": read_time,
+        "category": CATEGORY_PRIVATE_AI,
+        "featured": False,
+        "content": html_content,
+    }
+
+    # Set thumbnail and main image if available
+    if thumbnail:
+        field_data["image"] = thumbnail
+        field_data["main-image"] = thumbnail
+        print(f"  Thumbnail: {thumbnail['url'][:60]}…")
+
     payload = {
         "isArchived": False,
         "isDraft": True,
-        "fieldData": {
-            "name": title,
-            "slug": clean_slug,
-            "description": description,
-            "author": author or "OneSource Cloud",
-            "read-time": read_time,
-            "category": CATEGORY_PRIVATE_AI,
-            "featured": False,
-            "content": html_content,
-        },
+        "fieldData": field_data,
     }
 
     url = f"https://api.webflow.com/v2/collections/{COLLECTION_ID}/items"
@@ -123,22 +144,31 @@ def publish_to_webflow(title, slug, description, author, html_content, read_time
 
 
 def main():
-    draft_file = find_latest_draft()
-    print(f"Found draft: {draft_file}")
+    # Accept specific file via CLI arg or DRAFT_FILE env var
+    if len(sys.argv) > 1:
+        draft_file = sys.argv[1]
+    elif os.environ.get("DRAFT_FILE"):
+        draft_file = os.environ["DRAFT_FILE"]
+    else:
+        draft_file = find_latest_draft()
+    print(f"Publishing: {draft_file}")
 
     with open(draft_file, encoding="utf-8") as f:
         content = f.read()
 
     meta, body = parse_frontmatter(content)
 
-    title = meta.get("title") or meta.get("meta_title") or "Untitled"
-    slug = meta.get("url_slug", Path(draft_file).stem)
-    description = meta.get("meta_description", "")
-    author = meta.get("author", "OneSource Cloud")
+    raw_title = (meta.get("title") or meta.get("meta_title") or meta.get("Meta Title", ""))
+    title = raw_title.replace(" | OneSource Cloud", "").strip() or "Untitled"
+    slug = (meta.get("url_slug") or meta.get("URL Slug") or meta.get("url slug")
+            or Path(draft_file).stem)
+    description = meta.get("meta_description") or meta.get("Meta Description", "")
+    author = meta.get("author") or meta.get("Author", "OneSource Cloud")
     read_time = estimate_read_time(body)
+    thumbnail = extract_first_image(body)
 
     html = md_to_html(body)
-    publish_to_webflow(title, slug, description, author, html, read_time)
+    publish_to_webflow(title, slug, description, author, html, read_time, thumbnail)
 
 
 if __name__ == "__main__":

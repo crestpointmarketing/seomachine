@@ -1,0 +1,60 @@
+name: Weekly Performance Review
+
+on:
+  schedule:
+    - cron: '0 9 * * 1'  # Every Monday 9am UTC
+  workflow_dispatch:      # Allow manual trigger from GitHub UI
+
+jobs:
+  performance-review:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install Claude Code CLI
+        run: npm install -g @anthropic-ai/claude-code
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install Python dependencies
+        run: pip install -r data_sources/requirements.txt
+
+      - name: Set up Google credentials
+        env:
+          GA4_TOKEN_JSON: ${{ secrets.GA4_TOKEN_JSON }}
+        run: |
+          mkdir -p credentials
+          echo "$GA4_TOKEN_JSON" > credentials/ga4-token.json
+
+      - name: Run performance review
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          DATAFORSEO_LOGIN: ${{ secrets.DATAFORSEO_LOGIN }}
+          DATAFORSEO_PASSWORD: ${{ secrets.DATAFORSEO_PASSWORD }}
+        run: |
+          claude -p \
+            --dangerously-skip-permissions \
+            "Run /performance-review to generate a weekly SEO performance report for OneSource Cloud.
+            Use real data from Search Console and DataForSEO.
+            Save the report to research/performance-review-\$(date +%Y-%m-%d).md
+            Then run: python dashboard_data.py"
+
+      - name: Commit performance report
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add research/performance-review-*.md dashboard.json
+          git diff --staged --quiet || git commit -m "auto: weekly performance review ($(date +%Y-%m-%d))"
+          git push

@@ -20,6 +20,9 @@ Your public cloud bill looks manageable—until AI workloads scale.
 
 What starts as a predictable per-hour GPU cost becomes a maze of egress fees, compliance overhead, spot interruption losses, and shared-resource performance penalties. This is the TCO trap most organizations discover too late.
 
+![System with various wires managing access to centralized resource of server in data center](https://images.pexels.com/photos/5480781/pexels-photo-5480781.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940)
+
+
 Building a serious AI program requires a serious infrastructure decision. And that decision should not be made on sticker price alone. When enterprises compare [private AI infrastructure](https://onesourcecloud.net/private-ai-infrastructure) against public cloud AI services at scale, the total cost of ownership tells a very different story than the initial invoice.
 
 This guide breaks down every cost dimension—direct, indirect, and risk-adjusted—so your team can make a clear-eyed infrastructure decision.
@@ -47,6 +50,9 @@ Understanding all three layers is the only way to make an accurate comparison.
 ---
 
 ## Public Cloud AI – The Full Cost Picture
+
+![A female engineer using a laptop while monitoring data servers in a modern server room.](https://images.pexels.com/photos/1181354/pexels-photo-1181354.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940)
+
 
 Public cloud AI platforms offer speed to start. They require no upfront hardware investment and provide access to GPU resources within minutes. For proof-of-concept work and early-stage AI development, this flexibility has clear value.
 
@@ -116,6 +122,9 @@ For healthcare organizations, this means HIPAA alignment from the infrastructure
 
 ## Side-by-Side TCO Comparison
 
+![Detailed view of server racks with glowing lights in a data center environment.](https://images.pexels.com/photos/17489153/pexels-photo-17489153.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940)
+
+
 The following comparison assumes a mid-scale enterprise AI environment: 8 × H100 GPUs, 500TB storage, high-throughput networking, continuous production workloads, and regulated industry compliance requirements.
 
 | Cost Dimension | Public Cloud (On-Demand) | Public Cloud (Reserved 3yr) | Managed Private AI |
@@ -161,6 +170,9 @@ The longer the program, the stronger the TCO case. Hardware depreciates. Operati
 ---
 
 ## When Public Cloud Makes Sense
+
+![A robotic hand reaching into a digital network on a blue background, symbolizing AI technology.](https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940)
+
 
 A complete TCO comparison requires intellectual honesty about where public cloud delivers genuine value.
 

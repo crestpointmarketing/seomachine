@@ -59,11 +59,12 @@ jobs:
 
             Steps:
             1. Run /research for this topic
-            2. Run /write for this topic
-            3. Save the draft to drafts/ directory
+            2. Run /write for this topic — this saves the draft to drafts/ and runs the scrubber
+            3. Run /optimize on the saved draft file to generate seo-report, keyword-analysis, and meta-options files
             4. Do NOT publish to Webflow - save draft only
 
-            Follow all brand guidelines in context/ files."
+            Follow all brand guidelines in context/ files.
+            Make sure all output files (article, seo-report, keyword-analysis, meta-options) are saved before finishing."
 
       - name: Publish draft to Webflow
         if: steps.check_topics.outputs.has_topics == 'true'

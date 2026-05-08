@@ -18,6 +18,9 @@
 
 A GPU cluster for enterprise AI is a coordinated system of GPU nodes, high-speed interconnects, tiered storage, and an orchestration layer, all designed to run AI workloads at production scale. Getting the architecture right determines whether those GPUs spend time training models or waiting on bottlenecks.
 
+![System with various wires managing access to centralized resource of server in data center](https://images.pexels.com/photos/5480781/pexels-photo-5480781.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940)
+
+
 Most enterprise teams encounter this gap the hard way.
 
 A lead infrastructure architect at a mid-sized financial services firm spent six months assembling what looked like a solid AI cluster: 32 NVIDIA H100 GPUs, a capable storage array, and a Kubernetes deployment. Model training jobs ran. Results came back. Then the team tried to scale to 64 GPUs. Training times did not halve. They barely improved.
@@ -48,6 +51,9 @@ For enterprises running production AI workloads, including large language model 
 ---
 
 ## Core components of an enterprise GPU cluster
+
+![A female engineer using a laptop while monitoring data servers in a modern server room.](https://images.pexels.com/photos/1181354/pexels-photo-1181354.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940)
+
 
 ### GPU compute nodes
 
@@ -117,6 +123,9 @@ Inference serving clusters running multiple model endpoints at high request volu
 
 ## Storage architecture: keeping GPUs fed
 
+![Detailed view of server racks with glowing lights in a data center environment.](https://images.pexels.com/photos/17489153/pexels-photo-17489153.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940)
+
+
 ### Why storage becomes the bottleneck
 
 GPU utilization rates in enterprise AI clusters without optimized storage often run below 60%. The GPUs are capable. The data pipeline is not.
@@ -176,6 +185,9 @@ Without proper multi-tenant controls, a cluster that looks adequate on paper bec
 ---
 
 ## Common architecture mistakes enterprises make
+
+![A robotic hand reaching into a digital network on a blue background, symbolizing AI technology.](https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940)
+
 
 **Choosing interconnect based on upfront cost.** The delta between 100 Gb/s Ethernet and InfiniBand is significant in initial procurement. It becomes minor compared to the cost of rebuilding the fabric after training performance plateaus at scale. Interconnect decisions should be made based on the workloads the cluster needs to run at full scale, not on the workloads running at initial deployment.
 

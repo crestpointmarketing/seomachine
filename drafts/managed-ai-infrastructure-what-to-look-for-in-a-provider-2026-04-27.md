@@ -11,6 +11,9 @@
 
 Most enterprise AI projects don't fail because the model was wrong. They fail because the infrastructure wasn't ready.
 
+![System with various wires managing access to centralized resource of server in data center](https://images.pexels.com/photos/5480781/pexels-photo-5480781.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940)
+
+
 Underprovisioned GPUs, shared compute environments, compliance gaps, and unpredictable costs have derailed more AI initiatives than poor data science ever has. As organizations move from AI pilots to production systems, the infrastructure decision becomes the most consequential one they'll make.
 
 That's why more enterprise teams are turning to [private AI infrastructure](https://onesourcecloud.net/private-ai-infrastructure) — and why choosing the right managed provider matters enormously. The wrong choice creates operational risk, cost overruns, and compliance exposure. The right choice lets your team focus entirely on building AI, not managing the environment it runs on.
@@ -49,6 +52,9 @@ If a provider's "managed" offering stops at hardware hosting, it isn't managed �
 ---
 
 ## Why Your Choice of Provider Matters More Than You Think
+
+![A female engineer using a laptop while monitoring data servers in a modern server room.](https://images.pexels.com/photos/1181354/pexels-photo-1181354.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940)
+
 
 Selecting a managed AI infrastructure provider isn't a procurement decision. It's a strategic one. Infrastructure decisions are hard to unwind, and the downstream effects — on performance, cost, compliance, and team productivity — compound over time.
 
@@ -170,6 +176,9 @@ Providers that require custom quotes for basic configurations, or that bury egre
 
 ## Red Flags to Watch For
 
+![Detailed view of server racks with glowing lights in a data center environment.](https://images.pexels.com/photos/17489153/pexels-photo-17489153.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940)
+
+
 Some patterns reliably predict a poor managed infrastructure experience:
 
 - **No dedicated option**: If the provider only offers shared tenancy, move on.
@@ -199,6 +208,9 @@ Providers who resist or deflect any of these questions are giving you important 
 ---
 
 ## How OneSource Cloud Approaches Managed AI Infrastructure
+
+![A robotic hand reaching into a digital network on a blue background, symbolizing AI technology.](https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940)
+
 
 OneSource Cloud is built around a single principle: your team should focus on AI, not infrastructure.
 

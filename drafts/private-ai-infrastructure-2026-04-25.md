@@ -14,6 +14,9 @@ word_count: ~2800
 
 Private AI infrastructure refers to AI compute, storage, and networking resources that an organization owns or exclusively controls, keeping models, data, and workloads entirely off shared public cloud environments. If you're past asking "should we use AI?" and into asking "how do we run it ourselves?", this guide is for you.
 
+![Abstract representation of large language models and AI technology.](https://images.pexels.com/photos/18069697/pexels-photo-18069697.png?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940)
+
+
 Here's the reality most cloud vendors won't tell you: at a certain scale, running your own private AI infrastructure is cheaper, faster, and more secure than renting someone else's. The break-even point is closer than most teams expect.
 
 In this guide, you'll get a practical decision framework, a real total cost of ownership breakdown, and a phase-by-phase deployment roadmap. No fluff, no vendor bias.
@@ -42,6 +45,9 @@ The three deployment models worth knowing:
 ---
 
 ## Private vs. Public Cloud AI: When Each Makes Sense
+
+![Visual abstraction of neural networks in AI technology, featuring data flow and algorithms.](https://images.pexels.com/photos/17483874/pexels-photo-17483874.png?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940)
+
 
 Most coverage of this topic is written by cloud vendors, so it skews toward "just use the cloud." Here's an honest comparison.
 
@@ -129,6 +135,9 @@ The software layer that ties it together:
 
 ## Who Actually Needs Private AI Infrastructure?
 
+![Wooden Scrabble tiles spelling 'AI' and 'NEWS' for a tech concept image.](https://images.pexels.com/photos/30869149/pexels-photo-30869149.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940)
+
+
 Not everyone. Here's where it makes clear sense.
 
 ### Regulated Industries
@@ -187,6 +196,9 @@ The OpEx model of cloud is predictable and doesn't require hardware procurement 
 ---
 
 ## How to Build Private AI Infrastructure: A Phase-by-Phase Roadmap
+
+![Modern abstract 3D render showcasing a complex geometric structure in cool hues.](https://images.pexels.com/photos/18069814/pexels-photo-18069814.png?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940)
+
 
 ### Phase 1: Assess Your Workloads (Weeks 1-4)
 

@@ -115,3 +115,16 @@ env/
 # GA4 Credentials (additional explicit entry)
 ga4-credentials.json
 google-analytics-credentials.json
+
+# Claude settings
+.claude/settings.json
+.claude/settings.local.json
+.claude/scheduled_tasks.lock
+
+# Generated dashboard data
+dashboard.json
+
+# Misc
+python3
+trash/
+assets/images/

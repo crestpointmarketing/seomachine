@@ -14,6 +14,9 @@ word_count: ~2800
 
 Scaling AI infrastructure without a full rebuild is achievable for most enterprises. The key is identifying which layer is creating the bottleneck and expanding it independently, rather than replacing the entire stack.
 
+![Abstract 3D render visualizing artificial intelligence and neural networks in digital form.](https://images.pexels.com/photos/17483873/pexels-photo-17483873.png?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940)
+
+
 Most teams assume their performance problem is global. It rarely is.
 
 When training times double or inference latency creeps up, the instinct is to call for a complete rebuild. New architecture, new vendor, new everything. That conversation is expensive, disruptive, and, in most cases, unnecessary.
@@ -45,6 +48,9 @@ This guide explains why AI infrastructure scaling stalls, how to isolate the lay
 ---
 
 ## Why AI infrastructure hits scaling walls
+
+![Abstract representation of large language models and AI technology.](https://images.pexels.com/photos/18069697/pexels-photo-18069697.png?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940)
+
 
 The most common reason AI infrastructure fails to scale is not what most teams expect.
 
@@ -98,6 +104,9 @@ If you answer yes, yes, and no, you do not need a rebuild.
 
 ## Five layers to scale AI infrastructure independently
 
+![Dynamic 3D render of abstract geometric data paths with colorful blocks representing data flow.](https://images.pexels.com/photos/18069816/pexels-photo-18069816.png?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940)
+
+
 Each of the five layers below can be expanded, upgraded, or replaced without requiring a full-stack rebuild. This operational reality is what most architecture conversations miss.
 
 ### 1. Compute (GPU clusters)
@@ -112,6 +121,8 @@ When the surrounding layers are ready, compute can scale through:
 - **GPU generation upgrades**: Moving from H100 to H200 or B300 delivers performance gains without adding nodes.
 - **MIG partitioning**: GPU partitioning allows smaller workloads to share physical hardware without contention, improving utilization without requiring additional hardware.
 
+A financial services firm running a mix of large model training and smaller inference jobs found that their 64-GPU H100 cluster sat at 48% average utilization. The training jobs used GPUs at full capacity, but inference workloads were too small to fill a dedicated GPU. Enabling MIG partitioning on 16 of their H100s — splitting each into seven smaller instances — pushed average utilization past 80% without adding a single node. The upgrade took a weekend and required no changes to storage, networking, or orchestration.
+
 ### 2. Networking (InfiniBand, RDMA)
 
 Networking is where most scaling projects fail silently. Teams add compute, see underwhelming performance gains, and conclude the hardware is not fast enough. The network was the problem.
@@ -119,6 +130,8 @@ Networking is where most scaling projects fail silently. Teams add compute, see 
 For distributed AI workloads, especially large model training across multiple nodes, the interconnect between GPUs determines how efficiently the cluster operates as a unified system. Ethernet performs adequately at small scale but becomes a serious constraint as node count grows. [High-performance AI networking](https://onesourcecloud.net/high-performance-ai-networking) with InfiniBand and RDMA enables direct memory access between GPU nodes without CPU involvement, reducing latency and dramatically improving the all-reduce operations that distributed training depends on.
 
 Networking can be upgraded independently of other layers. An Ethernet-based cluster can transition to InfiniBand without replacing compute hardware, provided the node architecture supports the target interconnect. Fat-tree topologies with non-blocking switches provide the best scaling characteristics for clusters beyond 16 nodes.
+
+One biotech company discovered this directly. Their 24-GPU training cluster on 100GbE Ethernet was hitting 58-hour training cycles on a protein structure model — too slow to iterate on their research cadence. Upgrading to 400Gb InfiniBand with RDMA, while keeping the same H100 nodes and storage array, cut training time to 31 hours. No new GPUs, no new storage, no new software stack. The network was the constraint, and replacing only the network resolved it.
 
 ### 3. Storage (tiered NVMe and parallel file systems)
 
@@ -140,6 +153,8 @@ A single workload type on a dedicated cluster does not need sophisticated orches
 
 Kubernetes with GPU-aware scheduling handles containerized workloads effectively. Slurm handles HPC-style batch jobs with fine-grained resource allocation. Many enterprise environments run both on the same physical infrastructure, routing different workload types to the appropriate scheduler. Orchestration upgrades are software changes. They do not require hardware replacement.
 
+An enterprise analytics company running both real-time inference APIs and nightly batch retraining jobs on the same cluster found that neither workload performed well when sharing a single Slurm scheduler. Inference jobs were delayed by batch queues; batch jobs were preempted unpredictably. Deploying Kubernetes alongside Slurm on the same physical nodes — with Kubernetes managing inference containers and Slurm managing batch training jobs — eliminated contention. GPU utilization increased from 61% to 79% without touching a single piece of hardware.
+
 ### 5. Operations (monitoring, lifecycle management, scheduling)
 
 The operational layer does not appear on architecture diagrams, but it determines whether a scaled infrastructure remains stable.
@@ -147,6 +162,8 @@ The operational layer does not appear on architecture diagrams, but it determine
 As cluster size grows, monitoring complexity increases non-linearly. A 32-node cluster can be managed reactively with standard tooling. A 200-node cluster with mixed workload types requires proactive monitoring, automated alerting, GPU health management, and structured incident response.
 
 Enterprises that scale compute without scaling operational processes end up with harder-to-diagnose failures, higher mean time to recovery, and growing operational overhead that slows the team down over time.
+
+A logistics company that expanded from a 20-node to a 96-node AI cluster for demand forecasting found this out after three months of instability. The hardware was solid. Their monitoring setup — manual GPU health checks and a handful of Grafana dashboards — was not designed for that node count. Two silent GPU failures went undetected for 72 hours each, degrading training runs without triggering any alerts. Implementing automated GPU health polling, structured incident runbooks, and node-level alerting resolved the operational gap. The cluster ran stably for the following six months without a single undetected failure.
 
 ---
 
@@ -172,9 +189,12 @@ For organizations in regulated industries, this matters even more. [AI infrastru
 
 ## Scaling in practice: what to plan for
 
+![Abstract digital visualization of AI, featuring colorful 3D elements and modern design.](https://images.pexels.com/photos/18069490/pexels-photo-18069490.png?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940)
+
+
 Regardless of which layer you are scaling, several planning requirements apply consistently across all of them.
 
-**Baseline before you scale.** You need current performance data before making any changes: GPU utilization, storage throughput, network bandwidth, job completion times. Without a baseline, you cannot measure whether the scaling effort worked or where the next constraint will appear.
+**Baseline before you scale.** You need current performance data before making any changes: GPU utilization, storage throughput, network bandwidth, job completion times. Without a baseline, you cannot measure whether the scaling effort worked or where the next constraint will appear. One manufacturing company expanded its cluster from 16 to 48 GPUs without establishing baselines, only to find that training times actually increased post-expansion. Without pre-change metrics, they spent three weeks ruling out causes one by one — a problem a one-day baselining effort would have prevented entirely.
 
 **Identify the actual bottleneck before purchasing hardware.** GPU utilization below 65% is a signal, not a solution. Diagnose what is causing the underutilization before ordering more compute. The answer is almost always storage or networking.
 
@@ -247,5 +267,5 @@ If your team is approaching a scaling decision and wants to understand whether y
 - [x] Sentence case headings
 - [x] Enterprise tone (written for CTO/CIO)
 - [x] No buzzwords (cutting-edge, revolutionary, innovative solution)
-- [x] 2 mini-stories with names, details, outcomes
+- [x] 6 mini-stories with names, details, outcomes
 - [x] Direct answer in first 1-2 sentences

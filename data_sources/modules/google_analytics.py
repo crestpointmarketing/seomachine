@@ -16,7 +16,15 @@ from google.analytics.data_v1beta.types import (
     FilterExpression,
     Filter,
 )
-from google.oauth2 import service_account
+from google.oauth2 import service_account, credentials as oauth2_credentials
+from google.auth.transport.requests import Request
+import json
+
+
+SCOPES = ["https://www.googleapis.com/auth/analytics.readonly"]
+OAUTH_TOKEN_PATH = os.path.join(
+    os.path.dirname(__file__), "..", "..", "credentials", "ga4-token.json"
+)
 
 
 class GoogleAnalytics:
@@ -25,29 +33,37 @@ class GoogleAnalytics:
     def __init__(
         self, property_id: Optional[str] = None, credentials_path: Optional[str] = None
     ):
-        """
-        Initialize GA4 client
-
-        Args:
-            property_id: GA4 property ID (defaults to env var GA4_PROPERTY_ID)
-            credentials_path: Path to credentials JSON (defaults to env var)
-        """
         self.property_id = property_id or os.getenv("GA4_PROPERTY_ID")
         credentials_path = credentials_path or os.getenv("GA4_CREDENTIALS_PATH")
 
         if not self.property_id:
             raise ValueError("GA4_PROPERTY_ID must be provided or set in environment")
 
-        if not credentials_path or not os.path.exists(credentials_path):
-            raise ValueError(f"Credentials file not found: {credentials_path}")
+        creds = self._load_credentials(credentials_path)
+        self.client = BetaAnalyticsDataClient(credentials=creds)
 
-        # Initialize client with service account
-        credentials = service_account.Credentials.from_service_account_file(
-            credentials_path,
-            scopes=["https://www.googleapis.com/auth/analytics.readonly"],
+    def _load_credentials(self, credentials_path: Optional[str]):
+        """Load OAuth2 token if available, otherwise fall back to service account."""
+        token_path = os.path.normpath(OAUTH_TOKEN_PATH)
+
+        if os.path.exists(token_path):
+            creds = oauth2_credentials.Credentials.from_authorized_user_file(
+                token_path, SCOPES
+            )
+            if creds.expired and creds.refresh_token:
+                creds.refresh(Request())
+                with open(token_path, "w") as f:
+                    f.write(creds.to_json())
+            return creds
+
+        if credentials_path and os.path.exists(credentials_path):
+            return service_account.Credentials.from_service_account_file(
+                credentials_path, scopes=SCOPES
+            )
+
+        raise ValueError(
+            "No GA4 credentials found. Run setup_ga4_oauth.py to authorize."
         )
-
-        self.client = BetaAnalyticsDataClient(credentials=credentials)
 
     def get_top_pages(
         self, days: int = 30, limit: int = 20, path_filter: Optional[str] = "/blog/"
