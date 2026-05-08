@@ -12,7 +12,7 @@ Articles are picked in order from Pending. Move to Done after draft is saved.
 - [x] How to scale AI infrastructure without rebuilding from scratch (2026-04-29)
 - [x] AI storage architecture for large language models (2026-05-01)
 - [x] InfiniBand vs Ethernet for AI cluster networking (2026-05-04)
-- [ ] On-premises AI infrastructure vs colocation: which is right for you
+- [x] On-premises AI infrastructure vs colocation: which is right for you (2026-05-08)
 - [ ] How to run HIPAA compliant AI in a hospital system
 - [ ] AI infrastructure for genomics and life sciences
 - [ ] Enterprise GPU scheduling: Kubernetes vs Slurm
