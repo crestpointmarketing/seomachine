@@ -5,7 +5,7 @@ Articles are picked in order from Pending. Move to Done after draft is saved.
 ---
 
 ## Pending
-- [ ] Multi-tenant vs dedicated AI infrastructure: security and performance tradeoffs
+- [x] Multi-tenant vs dedicated AI infrastructure: security and performance tradeoffs (2026-05-11)
 - [ ] AI infrastructure monitoring and observability: tools and best practices
 - [ ] Sovereign AI infrastructure: keeping training data and models within national boundaries
 - [ ] AI data center power and cooling requirements: enterprise planning guide
