@@ -8,7 +8,7 @@ Articles are picked in order from Pending. Move to Done after draft is saved.
 - [x] Multi-tenant vs dedicated AI infrastructure: security and performance tradeoffs (2026-05-11)
 - [x] AI infrastructure monitoring and observability: tools and best practices (2026-05-13)
 - [x] Sovereign AI infrastructure: keeping training data and models within national boundaries (2026-05-15)
-- [ ] AI data center power and cooling requirements: enterprise planning guide
+- [x] AI data center power and cooling requirements: enterprise planning guide (2026-05-18)
 - [ ] GPU memory optimization for large language model inference at scale
 - [ ] AI infrastructure for financial services: compliance, latency, and isolation requirements
 - [ ] Private LLM deployment: infrastructure requirements and architecture guide
